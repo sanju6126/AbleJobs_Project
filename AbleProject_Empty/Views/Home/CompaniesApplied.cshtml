@@ -1,0 +1,64 @@
+﻿@model IEnumerable<AbleProject_Empty.Models.PostJob>
+
+@{
+    ViewBag.Title = "CompaniesApplied";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Companies Applied</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table">
+    <tr>
+        <th style="background-color:aquamarine" >
+            @Html.DisplayNameFor(model => model.JobId)
+        </th>
+        <th style="background-color:aquamarine">
+            @Html.DisplayNameFor(model => model.JobRole)
+        </th>
+        <th style="background-color:aquamarine">
+            @Html.DisplayNameFor(model => model.JobDescription)
+        </th>
+        <th style="background-color:aquamarine">
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th style="background-color:aquamarine">
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th style="background-color:aquamarine">
+            @Html.DisplayNameFor(model => model.CreatedOn)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobRole)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedOn)
+        </td>
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>*@
+    </tr>
+}
+
+</table>
